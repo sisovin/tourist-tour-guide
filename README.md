@@ -1,2 +1,1 @@
-# tourist-tour-guide
-A repository for the Tourist Tour Guides website project
+This repository is empty. Any task executed on it should be considered a new capability and needs to be created.
