@@ -1,16 +1,12 @@
-# Tourist Tour Guides Website
+# Setup Guide
 
-## Project Description
-This project is a comprehensive web application designed to provide tourists with detailed information about various tour guides. It includes a frontend built with Next.js 15 and a backend powered by NestJS. The application also features a PostgreSQL database and is fully dockerized for easy deployment.
-
-## Setup Instructions
-
-### Prerequisites
+## Prerequisites
 - Node.js (v14 or later)
 - Docker
 - PostgreSQL
 
-### Installation
+## Installation
+
 1. Clone the repository:
    ```sh
    git clone https://github.com/githubnext/workspace-blank.git
