@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UsersService } from '../users/users.service';
 import { User } from '../users/user.entity';
+import * as argon2 from 'argon2';
 
 @Injectable()
 export class AuthService {
@@ -12,7 +13,7 @@ export class AuthService {
 
   async validateUser(username: string, pass: string): Promise<any> {
     const user = await this.usersService.findOne(username);
-    if (user && user.password === pass) {
+    if (user && await argon2.verify(user.password, pass)) {
       const { password, ...result } = user;
       return result;
     }
@@ -27,6 +28,7 @@ export class AuthService {
   }
 
   async register(user: User) {
+    user.password = await argon2.hash(user.password);
     return this.usersService.create(user);
   }
 }
